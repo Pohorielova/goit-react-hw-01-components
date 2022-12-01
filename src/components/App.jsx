@@ -2,9 +2,10 @@
 import { Box } from './Box';
 import user from 'user.json';
 import data from 'data.json';
+import friends from 'friends.json';
 import { Profile } from './Profile/Profile';
 import { Statistics} from './Statistics/Statistics';
-
+import { FriendList} from './FriendList/FriendList';
 
 export const App =()=>{
  return (
@@ -20,9 +21,10 @@ export const App =()=>{
   followers={user.stats.followers}
   likes={user.stats.likes}
 />
-<Box as='h2' mb={20} mt={40}>2.Sections</Box>
-
+<Box as='h2' mb={20} mt={40}>2.Statistics</Box>
 <Statistics stats={data} />
+<Box as='h2' mb={20} mt={40}>3.Friends</Box>
+<FriendList friends={friends} />
 </Box>
 
 
