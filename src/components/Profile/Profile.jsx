@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import {Avatar, Name, UserDesc, StatsEl, Label, Quantity } from './Profile.styled';
 import { Box } from '../Box';
 export const Profile =({username, tag, location, avatar, followers, views, likes })=>{
- return <Box as='div'  width={249} background='white' borderRadius={6} boxShadow='rgba(0, 0, 0, 0.35) 0px 5px 15px;'>
+ return <Box as='section'  width={249} background='white' borderRadius={6} boxShadow='rgba(0, 0, 0, 0.35) 0px 5px 15px;'>
  <Box as='div' p={25} display='flex' alignItems='center' flexDirection='column' >
    <Avatar
     src={avatar}

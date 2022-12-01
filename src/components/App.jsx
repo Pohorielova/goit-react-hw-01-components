@@ -1,12 +1,14 @@
 
 import { Box } from './Box';
 import user from 'user.json';
+import data from 'data.json';
 import { Profile } from './Profile/Profile';
+import { Statistics} from './Statistics/Statistics';
 
 
 export const App =()=>{
  return (
-  <Box as='section' p={15}>
+  <Box as='div' p={15}>
     <Box as='h2' mb={20}>1.Profile</Box>
   <Profile
   username={user.username}
@@ -18,7 +20,11 @@ export const App =()=>{
   followers={user.stats.followers}
   likes={user.stats.likes}
 />
+<Box as='h2' mb={20} mt={40}>2.Sections</Box>
+
+<Statistics stats={data} />
 </Box>
+
 
  );
 };
