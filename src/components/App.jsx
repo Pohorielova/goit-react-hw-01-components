@@ -1,6 +1,4 @@
 
-
-
 import { Box } from './Box';
 import user from 'user.json';
 import { Profile } from './Profile/Profile';
@@ -9,7 +7,7 @@ import { Profile } from './Profile/Profile';
 export const App =()=>{
  return (
   <Box as='section' p={15}>
-    <h2>1.Profile</h2>
+    <Box as='h2' mb={20}>1.Profile</Box>
   <Profile
   username={user.username}
   tag={user.tag}

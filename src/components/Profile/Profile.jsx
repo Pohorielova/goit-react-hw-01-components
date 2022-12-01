@@ -1,34 +1,35 @@
 import PropTypes from 'prop-types';
-import {Card, Avatar } from './Profile.styled';
-
+import {Avatar, Name, UserDesc, StatsEl, Label, Quantity } from './Profile.styled';
+import { Box } from '../Box';
 export const Profile =({username, tag, location, avatar, followers, views, likes })=>{
- return <Card>
- <div>
+ return <Box as='div'  width={249} background='white' borderRadius={6} boxShadow='rgba(0, 0, 0, 0.35) 0px 5px 15px;'>
+ <Box as='div' p={25} display='flex' alignItems='center' flexDirection='column' >
    <Avatar
     src={avatar}
      alt="User avatar"
-     class="avatar"
-   />
-   <p class="name">{username}</p>
-  <p class="tag">@{tag}</p>
-  <p class="location">{location}</p>
- </div>
+     size = "35px"
 
- <ul class="stats">
-   <li>
-     <span class="label">Followers</span>
-     <span class="quantity">{followers}</span>
-   </li>
-   <li>
-     <span class="label">Views</span>
-     <span class="quantity">{views}</span>
-   </li>
-   <li>
-     <span class="label">Likes</span>
-     <span class="quantity">{likes}</span>
-   </li>
- </ul>
-</Card>;
+   />
+   <Name >{username}</Name>
+  <UserDesc >@{tag}</UserDesc>
+  <UserDesc>{location}</UserDesc>
+ </Box>
+
+ <Box as='ul' display='flex' borderRadius={6}>
+   <StatsEl>
+     <Label >Followers</Label>
+     <Quantity >{followers}</Quantity>
+   </StatsEl>
+   <StatsEl>
+     <Label >Views</Label>
+     <Quantity>{views}</Quantity>
+   </StatsEl>
+   <StatsEl>
+     <Label>Likes</Label>
+     <Quantity>{likes}</Quantity>
+   </StatsEl>
+ </Box>
+</Box>;
 };
 
 Profile.propTypes={
